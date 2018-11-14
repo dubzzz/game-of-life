@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Cell from './Cell.vue'
+import Cell from './components/Cell.vue'
 
 export default {
   name: 'GameOfLife',
