@@ -1,6 +1,6 @@
 <template>
   <div id="game-of-life">
-    <cell v-bind:enabled="true"></cell>
+    <cell v-bind:is-alive="true"></cell>
   </div>
 </template>
 
