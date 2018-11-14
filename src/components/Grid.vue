@@ -36,8 +36,7 @@ export default {
     height: 30vw;
     margin: auto;
     display: grid;
-    border: solid 1px black;
-    background-color: black;
+    background-color: yellowgreen;
     grid-gap: 1px;
     grid-template-columns: repeat(var(--columns), 1fr);
     grid-template-rows: repeat(var(--rows), 1fr);

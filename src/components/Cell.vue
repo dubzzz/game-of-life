@@ -13,10 +13,8 @@ export default {
 
 <style scoped>
 .cell {
-  border: 1px solid black;
-  background-color: white;
 }
 .alive {
-  background-color: black;
+  background-color: green;
 }
 </style>

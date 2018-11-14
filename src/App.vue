@@ -1,7 +1,7 @@
 <template>
   <div id="game-of-life">
     <grid :rows-count="rows" :columns-count="cols" :initial-grid="aliveCellsMap" />
-    <div class="buttons-container">
+    <div id="buttons-container">
       <md-button class="md-raised" @click="randomizeMap()">Random</md-button>
       <md-button class="md-raised" @click="nextMap()">Next</md-button>
       <md-button class="md-raised" v-if="running == null" @click="autoMap()">Run</md-button>
@@ -81,5 +81,8 @@ export default {
 #game-of-life {
   padding: 60px 40px;
   position: relative;
+}
+#buttons-container {
+  text-align: center;
 }
 </style>
