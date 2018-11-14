@@ -1,6 +1,6 @@
 <template>
     <div class="grid__container" :style="`--rows:${rowsCount}; --columns:${columnsCount};`">
-        <cell v-for="(state, idx) in grid" :key="idx" :is-alive="state"></cell>
+        <cell v-for="(_, idx) in cellsCount" :key="idx" :is-alive="isCellAlive(idx)"></cell>
     </div>
 </template>
 
@@ -25,15 +25,6 @@ export default {
             const col = n % this.columnsCount;
             const row = (n / this.columnsCount) | 0;
             return !!this.initialGrid[`R${row}C${col}`];
-        }
-    },
-    computed: {
-        grid: function() {
-            const g = [];
-            for (let n = 0 ; n !== this.cellsCount ; ++n) {
-                g.push(this.isCellAlive(n));
-            }
-            return g;
         }
     }
 }
