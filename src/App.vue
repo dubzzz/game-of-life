@@ -3,7 +3,7 @@
     <grid :rows-count="rows" :columns-count="cols" :initial-grid="aliveCellsMap" />
     <div id="buttons-container">
       <md-button class="md-raised" @click="randomizeMap()">Random</md-button>
-      <md-button class="md-raised" @click="nextMap()">Next</md-button>
+      <md-button class="md-raised" :disabled="running != null" @click="nextMap()">Next</md-button>
       <md-button class="md-raised" v-if="running == null" @click="autoMap()">Run</md-button>
       <md-button class="md-raised" v-if="running != null" @click="autoMap()">Stop</md-button>
     </div>
