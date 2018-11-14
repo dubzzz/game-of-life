@@ -1,6 +1,6 @@
 <template>
   <div id="game-of-life">
-    <cell />
+    <cell v-bind:enabled="true"></cell>
   </div>
 </template>
 
@@ -9,7 +9,7 @@ import Cell from './Cell.vue'
 
 export default {
   name: 'GameOfLife',
-  components: {Cell}
+  components: { Cell }
 }
 </script>
 
