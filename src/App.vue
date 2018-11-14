@@ -2,10 +2,10 @@
   <div id="game-of-life">
     <grid :rows-count="rows" :columns-count="cols" :initial-grid="aliveCellsMap" />
     <div class="buttons-container">
-      <button @click="randomizeMap()">Random</button>
-      <button @click="nextMap()">Next</button>
-      <button v-if="running == null" @click="autoMap()">Run</button>
-      <button v-if="running != null" @click="autoMap()">Stop</button>
+      <md-button class="md-raised" @click="randomizeMap()">Random</md-button>
+      <md-button class="md-raised" @click="nextMap()">Next</md-button>
+      <md-button class="md-raised" v-if="running == null" @click="autoMap()">Run</md-button>
+      <md-button class="md-raised" v-if="running != null" @click="autoMap()">Stop</md-button>
     </div>
   </div>
 </template>
@@ -26,8 +26,8 @@ export default {
         R1C7: true,
         R0C29: true,
       },
-      rows: 10,
-      cols: 30,
+      rows: 30,
+      cols: 90,
       running: null,
     };
   },
