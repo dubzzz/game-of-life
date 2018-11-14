@@ -1,6 +1,6 @@
 <template>
     <div class="grid__container" :style="`--rows:${rowsCount}; --columns:${columnsCount};`">
-        <cell v-for="(line, idx) in grid" :key="idx" :is-alive="false"></cell>
+        <cell v-for="(state, idx) in grid" :key="idx" :is-alive="state"></cell>
     </div>
 </template>
 
@@ -10,6 +10,7 @@ import Cell from './Cell.vue'
 export default {
     name: 'Grid',
     props: {
+        initialGrid: Object,
         rowsCount: Number.required,
         columnsCount: Number.required
     },
@@ -19,11 +20,18 @@ export default {
             cellsCount: this.rowsCount * this.columnsCount
         };
     },
+    methods: {
+        isCellAlive: function(n) {
+            const col = n % this.columnsCount;
+            const row = (n / this.columnsCount) | 0;
+            return !!this.initialGrid[`R${row}C${col}`];
+        }
+    },
     computed: {
         grid: function() {
             const g = [];
-            for (let j = 0 ; j !== this.cellsCount ; ++j) {
-                g.push(false);
+            for (let n = 0 ; n !== this.cellsCount ; ++n) {
+                g.push(this.isCellAlive(n));
             }
             return g;
         }
