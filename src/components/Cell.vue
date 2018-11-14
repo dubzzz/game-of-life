@@ -1,5 +1,5 @@
 <template>
-    <div v-bind:class="isAlive ? 'cell alive' : 'cell'"></div>
+    <div :class="isAlive ? 'cell alive' : 'cell'"></div>
 </template>
 
 <script>
@@ -13,9 +13,8 @@ export default {
 
 <style scoped>
 .cell {
-  height: 10px;
-  width: 10px;
   border: 1px solid black;
+  background-color: white;
 }
 .alive {
   background-color: black;

@@ -1,15 +1,15 @@
 <template>
   <div id="game-of-life">
-    <cell v-bind:is-alive="true"></cell>
+    <grid rows-count="10" columns-count="30" />
   </div>
 </template>
 
 <script>
-import Cell from './components/Cell.vue'
+import Grid from './components/Grid.vue'
 
 export default {
   name: 'GameOfLife',
-  components: { Cell }
+  components: { Grid }
 }
 </script>
 
@@ -17,16 +17,5 @@ export default {
 #game-of-life {
   padding: 60px 40px;
   position: relative;
-}
-.logos-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.logos-container img {
-  height: 40px;
-}
-.logos-container img + img {
-  margin-left: 5px;
 }
 </style>
